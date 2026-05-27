@@ -1,80 +1,5 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# Client Churn Prediction | Machine Learning Project
-A classification machine learning problem aimed at predicting customer churn based on whether customers left the company, labeled as “Yes” or “No”.
-
-<details>
-  <summary>
-   <h2>Project Goals</h2>
-  </summary>
-
-## Methodology
-At first 20% of the data were splitted for final testing; stratified by the 'Churn' (target) column.
-
-## Data cleaning
-* Convert 'TotalCharges' column which is of object type to float type using pd.to_numeric().
-* Eleven missing values were found in the 'TotalCharges' column and were removed from the dataset.
-* Data has no duplicates.
-* The names of the columns converted from camel case to snake_case.
-
-## Exploratory data analysis
-1. Value counts shows the distribution of the churn rate in the data which showed an imbalance in the data (73% - "no", 27% - "yes").
-2. Bar chart shows that the data is evenly distributed between two genders.
-3. Histogram and box plot of continous features implies that:
-    * Some outliers exists for churned users with higher tenure or total charges.
-4. Heatmap shows the correlation between the main numerical variables:
-    * Total charges is heavily influenced by tenure.
-    * Monthly charges also contributes to revenue accumulation.
-    * Monthly charges are only weakly related to how long customers stay.
-
-The clean data was exported in a new file "custom_churn_clean.csv"
-
-## Feature selection
-
-
-## Feature encoding 
-One-hot encoding technique was applied to the categorical features, transforming them in True and False categories.
-
-## Evaluation metric 
-Churn is costly: missing a churner = lost revenue
-So we want to minimize false negatives
-Recall answers: “Of all customers who actually churned, how many did we successfully detect?”
-
-- TP (True Positives) = correctly identified churners 
-- FN (False Negatives) = missed churners (VERY expensive)
-
-![image.png](attachment:image.png)
-
-
-## Models training
-Nine different models were applied on the data and all results are reported with confusion matrix and classification report showing the recall metric.
-1. KNN
-2. Logistic regression
-3. Decision Tree
-4. Bagging
-5. Random Forest
-6. Ada Boost
-7. Gradient Boosting
-8. XGBoost Classifier
-9. Voting Classifier
-
-
-## Hyperparameter Tuning
-Methods applied:
-- Random Search
-- Grid Search
-
-
-  <br>
-  <hr> 
-
-</details>
-
-
-
-
-
-
 <h1> Client Churn Prediction | Machine Learning Project</h1>
 
 <p>
@@ -224,7 +149,7 @@ Recall = TP / (TP + FN)
 
 <hr>
 
-<h2>🤖 Models Trained</h2>
+<h2> Models Trained</h2>
 
 <p>
 The following machine learning models were trained and evaluated:
@@ -254,7 +179,7 @@ Each model was evaluated using:
 
 <hr>
 
-<h2>🔍 Hyperparameter Tuning</h2>
+<h2> Hyperparameter Tuning</h2>
 
 <p>
 Two optimization techniques were applied:
@@ -271,7 +196,7 @@ These methods were used to identify the best hyperparameter combinations for eac
 
 <hr>
 
-<h2>📈 Key Findings</h2>
+<h2> Key Findings</h2>
 
 <ul>
   <li>Tree-based models achieved the best overall performance.</li>
@@ -282,7 +207,7 @@ These methods were used to identify the best hyperparameter combinations for eac
 
 <hr>
 
-<h2>🛠️ Technologies Used</h2>
+<h2> Technologies Used</h2>
 
 <ul>
   <li>Python</li>
@@ -296,7 +221,7 @@ These methods were used to identify the best hyperparameter combinations for eac
 
 <hr>
 
-<h2>🚀 Future Improvements</h2>
+<h2> Future Improvements</h2>
 
 <ul>
   <li>Handle class imbalance using SMOTE.</li>
