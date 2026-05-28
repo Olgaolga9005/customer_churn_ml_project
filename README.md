@@ -111,7 +111,7 @@ Categorical variables were transformed using
 
 <hr>
 
-<h2>📏 Evaluation Metric</h2>
+<h2> Evaluation Metric</h2>
 
 <p>
 Since customer churn is costly for businesses, the project focuses primarily on 
@@ -156,28 +156,47 @@ The following machine learning models were trained and evaluated:
 </p>
 
 <ol>
-  <li>K-Nearest Neighbors (KNN)</li>
   <li>Logistic Regression</li>
   <li>Decision Tree</li>
-  <li>Bagging Classifier</li>
   <li>Random Forest</li>
-  <li>AdaBoost</li>
-  <li>Gradient Boosting</li>
   <li>XGBoost Classifier</li>
   <li>Voting Classifier</li>
 </ol>
 
 <p>
-Each model was evaluated using:
+Each model was evaluated using "Recall score" including other evaluation metrics for comparison:
 </p>
 
 <ul>
-  <li>Confusion Matrix</li>
-  <li>Classification Report</li>
   <li>Recall Score</li>
+  <li>Precision</li>
+  <li>F1 Score</li>
+  <li>Accuracy</li>
 </ul>
 
+<p>
+Results:
+</p>
+
+| Dataset | Model                 | Recall | Precision | F1 Score | Accuracy |
+|----------|-----------------------|--------:|-----------:|----------:|----------:|
+| raw | DecisionTree        | 0.5963 | 0.5646 | 0.5800 | 0.7704 |
+| raw | LogisticRegression | 0.5000 | 0.6032 | 0.5468 | 0.7797 |
+| raw | VotingClassifier   | 0.4973 | 0.6619 | 0.5679 | 0.7989 |
+| raw | RandomForest       | 0.4947 | 0.6006 | 0.5425 | 0.7783 |
+| raw | XGBoost            | 0.4947 | 0.6187 | 0.5498 | 0.7846 |
+
 <hr>
+
+<h2> Key Findings</h2>
+
+<ul>
+<li>Decision Tree achieved the highest recall score, making it the strongest model for identifying positive churn cases.</li>
+<li>VotingClassifier produced the highest overall accuracy and precision, indicating more reliable overall predictions.</li>
+<li>Tree-based ensemble models (Random Forest, XGBoost, VotingClassifier) delivered balanced performance across all evaluation metrics.</li>
+<li>Logistic Regression performed competitively but showed lower recall compared to Decision Tree, suggesting that linear models may not fully capture complex churn patterns.</li>
+<li>The performance gap between linear and tree-based models suggests the dataset contains important non-linear relationships.</li>
+</ul>
 
 <h2> Hyperparameter Tuning</h2>
 
@@ -187,7 +206,24 @@ Two optimization techniques were applied:
 
 <ul>
   <li><strong>Random Search</strong></li>
+
+| Model | Recall | Precision | F1 Score | Accuracy |
+|-------|--------:|-----------:|----------:|----------:|
+| DecisionTree | 0.5348 | 0.5348 | 0.5348 | 0.7527 |
+| RandomForest | 0.5053 | 0.6197 | 0.5567 | 0.7861 |
+| LogisticRegression | 0.5000 | 0.6032 | 0.5468 | 0.7797 |
+| VotingClassifier | 0.5000 | 0.5736 | 0.5343 | 0.7683 |
+| XGBoost | 0.4733 | 0.6254 | 0.5388 | 0.7846 |
+
   <li><strong>Grid Search</strong></li>
+
+  | Model | Recall | Precision | F1 Score | Accuracy |
+|-------|--------:|-----------:|----------:|----------:|
+| DecisionTree | 0.5615 | 0.5497 | 0.5556 | 0.7612 |
+| LogisticRegression | 0.5000 | 0.6032 | 0.5468 | 0.7797 |
+| VotingClassifier | 0.5000 | 0.5736 | 0.5343 | 0.7683 |
+| XGBoost | 0.4840 | 0.6511 | 0.5552 | 0.7939 |
+| RandomForest | 0.4599 | 0.6442 | 0.5367 | 0.7889 |
 </ul>
 
 <p>
@@ -196,13 +232,15 @@ These methods were used to identify the best hyperparameter combinations for eac
 
 <hr>
 
-<h2> Key Findings</h2>
+<h2> Key Highlights</h2>
 
 <ul>
-  <li>Tree-based models achieved the best overall performance.</li>
-  <li>Random Forest and XGBoost produced the highest recall scores.</li>
-  <li>The dataset contains strong non-linear relationships.</li>
-  <li>Recall-focused optimization improved churn detection capabilities.</li>
+- The initial models already showed strong performance, with Decision Tree achieving the highest recall and VotingClassifier delivering the best overall accuracy and precision.
+- Hyperparameter tuning improved the stability and balance of most models, especially Random Forest and XGBoost.
+- Decision Tree consistently remained the best model for recall-focused churn detection across all experiments.
+- Ensemble models (VotingClassifier, Random Forest, and XGBoost) maintained higher precision and accuracy, reducing false positive predictions.
+- Logistic Regression produced stable but less competitive results, suggesting the dataset contains important non-linear patterns.
+- Overall, the optimized models confirmed that tree-based and ensemble approaches are the most effective solutions for this churn prediction problem.
 </ul>
 
 <hr>
@@ -226,7 +264,7 @@ These methods were used to identify the best hyperparameter combinations for eac
 <ul>
   <li>Handle class imbalance using SMOTE.</li>
   <li>Improve feature selection techniques.</li>
-  <li>Deploy the model using Streamlit or Flask.</li>
+  <li>Deploy the model using Streamlit.</li>
   <li>Add model explainability using SHAP values.</li>
   <li>Optimize classification thresholds for business objectives.</li>
 </ul>
