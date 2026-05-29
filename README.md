@@ -235,12 +235,12 @@ These methods were used to identify the best hyperparameter combinations for eac
 <h2> Key Highlights</h2>
 
 <ul>
-- The initial models already showed strong performance, with Decision Tree achieving the highest recall and VotingClassifier delivering the best overall accuracy and precision.
-- Hyperparameter tuning improved the stability and balance of most models, especially Random Forest and XGBoost.
-- Decision Tree consistently remained the best model for recall-focused churn detection across all experiments.
-- Ensemble models (VotingClassifier, Random Forest, and XGBoost) maintained higher precision and accuracy, reducing false positive predictions.
-- Logistic Regression produced stable but less competitive results, suggesting the dataset contains important non-linear patterns.
-- Overall, the optimized models confirmed that tree-based and ensemble approaches are the most effective solutions for this churn prediction problem.
+  <li>The initial models already showed strong performance, with Decision Tree achieving the highest recall and VotingClassifier delivering the best overall accuracy and precision.</li>
+  <li>Hyperparameter tuning improved the stability and balance of most models, especially Random Forest and XGBoost.</li>
+  <li>Decision Tree consistently remained the best model for recall-focused churn detection across all experiments.</li>
+  <li>Ensemble models (VotingClassifier, Random Forest, and XGBoost) maintained higher precision and accuracy, reducing false positive predictions.</li>
+  <li>Logistic Regression produced stable but less competitive results, suggesting the dataset contains important non-linear patterns.</li>
+  <li>Overall, the optimized models confirmed that tree-based and ensemble approaches are the most effective solutions for this churn prediction problem.</li>
 </ul>
 
 <hr>
@@ -268,3 +268,5 @@ These methods were used to identify the best hyperparameter combinations for eac
   <li>Add model explainability using SHAP values.</li>
   <li>Optimize classification thresholds for business objectives.</li>
 </ul>
+
+Link to the presentation: https://docs.google.com/presentation/d/176ruCboH_gYPUXJY6CRD_bqj3L4_gr5l/edit?usp=sharing&ouid=111978843608016953666&rtpof=true&sd=true
